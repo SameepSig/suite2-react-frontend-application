@@ -45,41 +45,37 @@ function Home() {
           </tr>
         </thead>
         <tbody>
-          {data.length > 0 ? (
-            data.map((student) => {
-              return (
-                <tr>
-                  <td>{student.id}</td>
-                  <td>{student.name}</td>
-                  <td>{student.email}</td>
-                  <td>{student.age}</td>
-                  <td>{student.gender}</td>
-                  <td>
-                    <Link
-                      className="btn mx-2 btn-success"
-                      to={`/read/${student.id}`}
-                    >
-                      Read
-                    </Link>
-                    <Link
-                      className="btn mx-2 btn-success"
-                      to={`/edit/${student.id}`}
-                    >
-                      Edit
-                    </Link>
-                    <button
-                      onClick={() => handleDelete(student.id)}
-                      className="btn mx-2 btn-danger"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              );
-            })
-          ) : (
-            <tr><td>No Students available</td></tr>
-          )}
+          {data.map((student) => {
+            return (
+              <tr>
+                <td>{student.id}</td>
+                <td>{student.name}</td>
+                <td>{student.email}</td>
+                <td>{student.age}</td>
+                <td>{student.gender}</td>
+                <td>
+                  <Link
+                    className="btn mx-2 btn-success"
+                    to={`/read/${student.id}`}
+                  >
+                    Read
+                  </Link>
+                  <Link
+                    className="btn mx-2 btn-success"
+                    to={`/edit/${student.id}`}
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    onClick={() => handleDelete(student.id)}
+                    className="btn mx-2 btn-danger"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
